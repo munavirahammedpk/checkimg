@@ -1,13 +1,20 @@
-const express=require('express');
-const app =express();
-const product=require('./api/product')
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose')
+const product = require('./api/product')
 
-const PORT=process.env.port||5050;
+const PORT = process.env.port || 5050;
 
-app.use("/",product);
+app.use("/", product);
 
-app.listen(PORT,()=>{
-    console.log('Server is running in port '+ PORT);
+app.listen(PORT, () => {
+    console.log('Server is running in port ' + PORT);
+});
+
+mongoose.connect('mongodb+srv://mnvr:mnvr@samplecluster.n0zzr.mongodb.net/flutterNoteApp?retryWrites=true&w=majority').then(()=>{
+    console.log('data base connection success');
+}).catch(()=>{
+    console.log('connection error');
 })
 
 // const express = require('express');
