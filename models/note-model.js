@@ -3,7 +3,6 @@ const { default: mongoose } = require("mongoose");
 const noteSchema = mongoose.Schema({
     id: {
         type: String,
-        unique: true,
         required: true,
     },
     userId: {

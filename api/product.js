@@ -15,14 +15,17 @@ router.get('/list',async (req, res) => {
      var notes=await Note.find();
      res.json(notes);
 })
+
 router.get('/add',async (req, res) => {
+
     const newNote= Note({
-        id:'1234',
-        userId:3,
-        title:true,
-        content:'this is the content',
+        id:req.body.id,
+        userId:req.body.userId,
+        title:req.body.title,
+        content:req.body.content,
     })
     await newNote.save();
+    
     const response={messege:'New Note Created!'};
     res.json(response);
 })
