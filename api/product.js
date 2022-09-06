@@ -16,7 +16,7 @@ router.get('/list',async (req, res) => {
      res.json(notes);
 })
 
-router.get('/add',async (req, res) => {
+router.post('/add',async (req, res) => {
 
     const newNote= Note({
         id:req.body.id,
