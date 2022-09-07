@@ -1,3 +1,4 @@
+const { json } = require('express');
 const express=require('express');
 const router=express.Router();
 const Note =require('../models/note-model')
@@ -17,8 +18,8 @@ router.get('/list',async (req, res) => {
 })
 
 router.post('/add',async (req, res) => {
-
-    const newNote= Note({
+    console.log(req.body);
+    const newNote=new Note({
         id:req.body.id,
         userId:req.body.userId,
         title:req.body.title,
