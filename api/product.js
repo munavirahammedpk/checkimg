@@ -18,7 +18,6 @@ router.get('/list',async (req, res) => {
 })
 
 router.post('/add',async (req, res) => {
-    console.log(req.body);
     const newNote=new Note({
         id:req.body.id,
         userId:req.body.userId,
