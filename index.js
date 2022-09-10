@@ -6,7 +6,7 @@ const product = require('./api/product')
 
 const PORT = process.env.port || 5050;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
@@ -20,28 +20,4 @@ mongoose.connect('mongodb+srv://mnvr:mnvr@samplecluster.n0zzr.mongodb.net/flutte
     console.log('data base connection success');
 }).catch(()=>{
     console.log('connection error');
-})
-
-// const express = require('express');
-// const { url } = require('inspector');
-// const app = express();
-// const mongoose = require('mongoose');
-
-// mongoose.connect("mongodb+srv://mnvr:mnvr@samplecluster.n0zzr.mongodb.net/flutterNoteApp?retryWrites=true&w=majority")
-//     .then(() => {
-//         console.log('Database connection successful');
-//     }).catch(() => {
-//         console.log('Database connection error');
-//     })
-
-// const noteRouter = require('./api/product')
-// app.use('/', noteRouter);
-
-
-
-// const PORT = process.env.port || 5050
-
-// app.listen(PORT, () => {
-//     console.log('Server started At ' + PORT);
-// });
-
+});
