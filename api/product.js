@@ -8,7 +8,7 @@ const getPass = require('../models/getpsw')
 
 
 router.get('/', (req, res) => {
-    res.send('This is Home Page')
+    res.send('This is Home')
 })
 
 router.get('/list', async (req, res) => {
