@@ -8,6 +8,10 @@ const getPass = require('../models/getpsw')
 
 
 router.get('/', (req, res) => {
+    res.send('Welcome to my App')
+})
+
+router.get('/render', async (req, res) => {
     res.render('index');
 })
 
