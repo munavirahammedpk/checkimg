@@ -1,9 +1,13 @@
 const express = require('express');
+
 const app = express();
 const bodyParser = require('body-parser');
 const product = require('./api/product')
 
+
 const PORT = process.env.port || 5050;
+
+app.set("view engine","hbs")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
